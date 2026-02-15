@@ -1,32 +1,182 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comprovante de Recebimento</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Comprovante Pix</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+}
+
+.container {
+  max-width: 420px;
+  margin: auto;
+  background: #fff;
+  min-height: 100vh;
+}
+
+.header {
+  background: #d90429;
+  color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.success {
+  text-align: center;
+  padding: 30px 20px;
+  background: #f7f7f7;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background: #16a34a;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+}
+
+.success h2 {
+  margin: 0;
+}
+
+.section {
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+
+.section-title {
+  color: #d90429;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.label {
+  color: #777;
+}
+
+.value {
+  font-weight: 500;
+}
+
+.amount {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.amount span {
+  display: block;
+  color: #777;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.amount h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.footer-buttons {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+}
+
+.btn-outline {
+  border: 2px solid #d90429;
+  color: #d90429;
+  background: white;
+}
+
+.btn-primary {
+  background: #d90429;
+  color: white;
+  border: none;
+}
+</style>
 </head>
-
 <body>
-  <div class="comprovante-container">
-    <h1>Comprovante de Recebimento</h1>
 
-    <div class="informacoes">
-      <p><span>Data:</span> <span id="data-atual"></span></p>
-      <p><span>Valor Recebido:</span> R$ 47,00</p>
-      <p><span>De:</span> Daniel Vargas dos Santos</p>
-      <p><span>Status:</span> Recebido com Sucesso</p>
-    </div>
+<div class="container">
 
-    <button class="botao" onclick="window.print()">Imprimir</button>
-
-    <div class="comprovante-footer">
-      <p>Se você tiver dúvidas, entre em contato com nosso suporte.</p>
-      <p><a href="#">Clique aqui</a> para mais informações.</p>
-    </div>
-
+  <div class="header">
+    <div>Bradesco</div>
+    <div style="font-size: 12px;">COMPROVANTE</div>
   </div>
+
+  <div class="success">
+    <div class="success-icon">✓</div>
+    <h2>Pix enviado com sucesso!</h2>
+    <p style="color:#777; font-size: 13px;">14 de fevereiro de 2026, às 11:40</p>
+  </div>
+
+  <div class="amount">
+    <span>VALOR</span>
+    <h1>R$ 47,00</h1>
+  </div>
+
+  <div class="section">
+    <div class="section-title">QUEM ENVIOU</div>
+    <div class="row"><div class="label">Nome</div><div class="value">Daniel Vargas</div></div>
+    <div class="row"><div class="label">CPF</div><div class="value">***.674.789-**</div></div>
+    <div class="row"><div class="label">Instituição</div><div class="value">Bradesco</div></div>
+    <div class="row"><div class="label">Agência</div><div class="value">5768</div></div>
+    <div class="row"><div class="label">Conta</div><div class="value">*****-5</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">QUEM RECEBEU</div>
+    <div class="row"><div class="label">Nome</div><div class="value">Gabriela Goulart Alvarenga Bustama</div></div>
+    <div class="row"><div class="label">Instituição</div><div class="value">Nubank</div></div>
+    <div class="row"><div class="label">Tipo de chave</div><div class="value">***.501.647-**</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">DETALHES</div>
+    <div class="row"><div class="label">ID da transação</div><div class="value">E6074694820620141532sK13n8Ht7Qp</div></div>
+    <div class="row"><div class="label">Descrição</div><div class="value">Devolução</div></div>
+    <div class="row"><div class="label">Tipo</div><div class="value">Pix transferência</div></div>
+  </div>
+
+  <div class="footer-buttons">
+    <div class="btn btn-outline">Compartilhar</div>
+    <div class="btn btn-primary">Salvar PDF</div>
+  </div>
+
+</div>
+
 
   <script>
     window.addEventListener("load", () => {
